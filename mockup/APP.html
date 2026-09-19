@@ -306,6 +306,9 @@
   .inv .i-num{font-size:22px; font-weight:700; margin-top:6px; font-variant-numeric:tabular-nums;}
   .inv .i-sub{font-size:12px; color:var(--text-secondary); margin-top:2px;}
   .inv .i-warn{font-size:12px; color:#B45309; margin-top:6px; background:#FFFBEB; display:inline-block; padding:3px 8px; border-radius:6px;}
+  a.inv{display:block; text-decoration:none; color:inherit; cursor:pointer; transition:border-color .15s, box-shadow .15s, transform .15s;}
+  a.inv:hover{border-color:#B9C4F0; box-shadow:0 6px 18px rgba(29,78,216,.08); transform:translateY(-1px);}
+  .glass{cursor:pointer;}
 
   /* 快捷入口 */
   .quick{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
@@ -716,22 +719,22 @@ input[type=range]{accent-color:#1D4ED8;}
           <span class="tag">👋 一切在控 · 1 项需处理</span>
         </div>
         <div class="glass-row">
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-001'):location.href='P7-运输监控-原型.html#BATCH-2608-001'" title="点击跳转">
             <div class="g-label"><span class="dot red"></span>逾期风险</div>
             <div class="g-num">1</div>
             <div class="g-sub">BATCH-2608-001 · +2 天</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-003'):location.href='P7-运输监控-原型.html#BATCH-2608-003'" title="点击跳转">
             <div class="g-label"><span class="dot amber"></span>待打分</div>
             <div class="g-num">1</div>
             <div class="g-sub">BATCH-2608-003 · 已签收</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html#awd'):location.href='P8-库存看板-原型.html#awd'" title="点击跳转">
             <div class="g-label"><span class="dot red"></span>呆滞库存</div>
             <div class="g-num">500 <span style="font-size:14px; opacity:.8;">台</span></div>
             <div class="g-sub">约 $90,000 · 库龄 &gt;60 天</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html#fba'):location.href='P8-库存看板-原型.html#fba'" title="点击跳转">
             <div class="g-label"><span class="dot amber"></span>FBA 可售天数</div>
             <div class="g-num">8 <span style="font-size:14px; opacity:.8;">天</span></div>
             <div class="g-sub">低于安全库存 15 天</div>
@@ -742,25 +745,25 @@ input[type=range]{accent-color:#1D4ED8;}
       <!-- 待办 + 在途批次 -->
       <div class="grid">
         <div class="card">
-          <div class="card-head"><div class="card-title">我的待办</div><div class="card-link">全部待办 →</div></div>
+          <div class="card-head"><div class="card-title">我的待办</div><div class="card-link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html'):location.href='P7-运输监控-原型.html'" title="查看全部批次与风险">全部待办 →</div></div>
           <div class="card-body">
             <ul class="todo">
-              <li>
+              <li onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P4-比价看板-原型.html'):location.href='P4-比价看板-原型.html'" title="点击跳转">
                 <div class="t-ico blue">选</div>
                 <div class="t-txt"><div class="t-title">选型任务进行中</div><div class="t-sub">#REQ-2608-001 · C28 × 2000 台 · 待比价</div></div>
                 <span class="t-go">2 项 →</span>
               </li>
-              <li>
+              <li onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P6-SO草稿-原型.html'):location.href='P6-SO草稿-原型.html'" title="点击跳转">
                 <div class="t-ico amber">审</div>
                 <div class="t-txt"><div class="t-title">订舱委托待审批</div><div class="t-sub">SO-2608-001 · 货代A · $10,130</div></div>
                 <span class="t-go">1 项 →</span>
               </li>
-              <li>
+              <li onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-003'):location.href='P7-运输监控-原型.html#BATCH-2608-003'" title="点击跳转">
                 <div class="t-ico green">评</div>
                 <div class="t-txt"><div class="t-title">履约待打分</div><div class="t-sub">BATCH-2608-003 · 货代C · 已签收</div></div>
                 <span class="t-go">1 项 →</span>
               </li>
-              <li>
+              <li onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html'):location.href='P8-库存看板-原型.html'" title="点击跳转">
                 <div class="t-ico red">盘</div>
                 <div class="t-txt"><div class="t-title">盘点待复核</div><div class="t-sub">INV-2608-01 · 差异 -20 台（盘亏）</div></div>
                 <span class="t-go">1 项 →</span>
@@ -770,7 +773,7 @@ input[type=range]{accent-color:#1D4ED8;}
         </div>
 
         <div class="card">
-          <div class="card-head"><div class="card-title">在途批次</div><div class="card-link">运输监控 →</div></div>
+          <div class="card-head"><div class="card-title">在途批次</div><div class="card-link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html'):location.href='P7-运输监控-原型.html'">运输监控 →</div></div>
           <div class="card-body" style="padding-top:12px;">
             <table>
               <thead>
@@ -784,7 +787,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td>在途（8/15 开船）</td>
                   <td class="num"><span style="color:#B91C1C;">9/12 vs 9/10</span></td>
                   <td><span class="pill red"><span class="dot red"></span>逾期风险</span></td>
-                  <td><span class="link">详情</span></td>
+                  <td><span class="link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-001'):location.href='P7-运输监控-原型.html#BATCH-2608-001'" style="cursor:pointer;">详情</span></td>
                 </tr>
                 <tr>
                   <td class="mono">BATCH-2608-002</td>
@@ -793,7 +796,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td id="r2status">订舱 · 截关 8/22</td>
                   <td class="num" id="r2eta">9/14 vs 9/14</td>
                   <td><span class="pill green"><span class="dot green"></span>正常</span></td>
-                  <td><span class="link">详情</span></td>
+                  <td><span class="link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-002'):location.href='P7-运输监控-原型.html#BATCH-2608-002'" style="cursor:pointer;">详情</span></td>
                 </tr>
                 <tr>
                   <td class="mono">BATCH-2608-003</td>
@@ -802,7 +805,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td>已签收（8/12）</td>
                   <td class="num">已到港</td>
                   <td><span class="pill amber"><span class="dot amber"></span>待打分</span></td>
-                  <td><span class="link">评分</span></td>
+                  <td><span class="link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-003'):location.href='P7-运输监控-原型.html#BATCH-2608-003'" style="cursor:pointer;">评分</span></td>
                 </tr>
               </tbody>
             </table>
@@ -813,24 +816,24 @@ input[type=range]{accent-color:#1D4ED8;}
       <!-- 库存 + 快捷入口 -->
       <div class="grid-2">
         <div class="card">
-          <div class="card-head"><div class="card-title">库存摘要</div><div class="card-link">库存看板 →</div></div>
+          <div class="card-head"><div class="card-title">库存摘要</div><div class="card-link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html'):location.href='P8-库存看板-原型.html'">库存看板 →</div></div>
           <div class="card-body">
             <div class="inv-blocks">
-              <div class="inv">
+              <a class="inv" href="P8-库存看板-原型.html#awd" title="下钻 AWD 卫星仓">
                 <div class="i-name">AWD 卫星仓 <span class="pill green"><span class="dot green"></span>正常</span></div>
                 <div class="i-num">3,200 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
                 <div class="i-sub" id="p1Transit">调拨中：2,000 台预计 9/19 上架</div>
-              </div>
-              <div class="inv">
+              </a>
+              <a class="inv" href="P8-库存看板-原型.html#fba" title="下钻 FBA 配送仓">
                 <div class="i-name">FBA 配送仓 <span class="pill amber"><span class="dot amber"></span>需关注</span></div>
                 <div class="i-num">1,500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
                 <div class="i-sub">可售 1,200 · 预留 300</div>
                 <div class="i-warn">⚠ 可售 8 天 &lt; 安全 15 天（在途可覆盖）</div>
-              </div>
+              </a>
             </div>
             <div style="margin-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
               <span class="pill red"><span class="dot red"></span>呆滞 500 台 · $90,000</span>
-              <span class="link">处理呆滞 →</span>
+              <span class="link" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html#awd'):location.href='P8-库存看板-原型.html#awd'" style="cursor:pointer;">处理呆滞 →</span>
             </div>
           </div>
         </div>
@@ -839,12 +842,12 @@ input[type=range]{accent-color:#1D4ED8;}
           <div class="card-head"><div class="card-title">快捷入口</div></div>
           <div class="card-body">
             <div class="quick">
-              <div class="q-btn"><div class="q-ico">选</div>发起选型</div>
-              <div class="q-btn"><div class="q-ico">报</div>导入报价</div>
+              <a class="q-btn" href="P2-选型需求-原型.html"><div class="q-ico">选</div>发起选型</a>
+              <a class="q-btn" href="P3-货代报价-原型.html"><div class="q-ico">报</div>导入报价</a>
               <a class="q-btn" href="P7-运输监控-原型.html"><div class="q-ico">运</div>运输监控</a>
-              <div class="q-btn"><div class="q-ico">存</div>库存看板</div>
+              <a class="q-btn" href="P8-库存看板-原型.html"><div class="q-ico">存</div>库存看板</a>
               <a class="q-btn" href="P4-比价看板-原型.html"><div class="q-ico">比</div>比价看板</a>
-              <div class="q-btn"><div class="q-ico">档</div>货代档案</div>
+              <a class="q-btn" href="P9-货代档案-原型.html"><div class="q-ico">档</div>货代档案</a>
             </div>
           </div>
         </div>
@@ -4669,6 +4672,10 @@ input[type=range]{accent-color:#1D4ED8;}
     .ai-verdict{flex-wrap:wrap;}
     .w-row{min-width:0;}
   }
+
+/* ===== P7 深链定位高亮 ===== */
+.batch.flash{animation:flashBg 1.8s ease;}
+@keyframes flashBg{0%{box-shadow:0 0 0 3px rgba(37,99,235,.45); background:#F0F5FF;}100%{box-shadow:var(--shadow-1); background:transparent;}}
 </style>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -4847,6 +4854,31 @@ document.querySelectorAll('.f-chip').forEach(c=>c.onclick=()=>{
 });
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
 render();
+/* 深链：从 P1 在途批次跳入时自动展开并定位对应批次 */
+(function(){
+  try{
+    var dl=null;
+    try{ if(window.parent&&window.parent._drillTarget) dl=window.parent._drillTarget; }catch(e){}
+    if(!dl){ var hh=(location.hash||'').replace('#','').split('?')[0]; if(hh) dl=hh; }
+    if(dl && dl.indexOf('BATCH-')===0){
+      try{ window.parent._drillTarget=null; }catch(e){}
+      filter='all';
+      var chips=document.querySelectorAll('.f-chip');
+      for(var i=0;i<chips.length;i++) chips[i].classList.toggle('active', chips[i].getAttribute('data-f')==='all');
+      render();
+      var det=document.getElementById('det-'+dl);
+      if(det){
+        if(!det.classList.contains('show')) toggleDetail(dl);
+        var card=det.parentElement;
+        card.classList.add('flash');
+        setTimeout(function(){ card.classList.remove('flash'); }, 1800);
+        try{ det.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
+        toast('已定位到 '+dl);
+      }
+    }
+  }catch(e){}
+})();
+
 </script>
 </body>
 </html>
@@ -5249,6 +5281,73 @@ input[type=range]{accent-color:#1D4ED8;}
     .ai-verdict{flex-wrap:wrap;}
     .w-row{min-width:0;}
   }
+
+/* ===== P8 库存下钻 ===== */
+.wh-card{cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;}
+.wh-card:hover{transform:translateY(-2px); box-shadow:0 14px 40px rgba(29,78,216,.10);}
+.score-badge{display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.01em;}
+.score-badge.good{background:#EEF7F2; color:#1F7A4D; border:1px solid #CBE7D7;}
+.score-badge.warn{background:#FFF7E6; color:#A86E12; border:1px solid #F2E2BE;}
+.score-badge span{font-weight:600; opacity:.75; font-size:11px; margin-right:1px;}
+.drill-link{display:inline-flex; align-items:center; gap:4px; font-size:12.5px; color:var(--accent); font-weight:600; margin-top:14px; cursor:pointer;}
+.drill-link:hover{color:var(--accent-hover);}
+.dr-back{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--text-secondary); cursor:pointer; margin-bottom:12px; padding:7px 14px; border:1px solid var(--line); border-radius:10px; background:var(--bg-page); transition:all .15s;}
+.dr-back:hover{color:var(--accent); border-color:#B9C4F0; transform:translateX(-2px);}
+.wh-hero{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; padding:20px 22px; background:linear-gradient(150deg,#F4F7FF 0%,#FAFCFF 60%,#FFFFFF 100%); border:1px solid #E3EAFD; border-radius:20px; margin-bottom:16px; box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 8px 24px rgba(29,78,216,.06);}
+.wh-hero h2{font-size:21px; letter-spacing:-.02em;}
+.wh-hero .wh-sub{font-size:12.5px; color:var(--text-secondary); margin-top:3px;}
+.wh-hero .wh-meta{font-size:12.5px; color:var(--text-tertiary); margin-top:8px; display:flex; gap:14px; flex-wrap:wrap;}
+.cap-row{margin-top:10px;}
+.cap-row .cap-label{font-size:12px; color:var(--text-secondary); display:flex; justify-content:space-between; margin-bottom:4px;}
+.cap-track{height:8px; border-radius:999px; background:#E7ECFA; overflow:hidden;}
+.cap-fill{height:100%; border-radius:999px; background:linear-gradient(90deg,#3B82F6,#1D4ED8);}
+.cap-fill.warn{background:linear-gradient(90deg,#FBBF24,#B45309);}
+.score-box{text-align:right; flex-shrink:0;}
+.score-box .score-big{font-size:34px; font-weight:750; letter-spacing:-.03em; line-height:1;}
+.score-box .score-tag{font-size:11.5px; color:var(--text-tertiary); margin-top:4px;}
+.wh-kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:16px;}
+.wh-kpis .s-card{cursor:default;}
+.tabs{display:flex; gap:4px; border-bottom:1px solid var(--line); margin-bottom:16px; overflow-x:auto;}
+.tab{padding:10px 18px; font-size:13.5px; color:var(--text-secondary); cursor:pointer; border-radius:12px 12px 0 0; border-bottom:2px solid transparent; white-space:nowrap; font-weight:500;}
+.tab:hover{color:var(--text-primary); background:var(--bg-hover);}
+.tab.active{color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:#F6F8FF;}
+.tab .tab-badge{display:inline-flex; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--bg-hover); color:var(--text-secondary); font-size:11px; align-items:center; justify-content:center; margin-left:6px;}
+.tab.active .tab-badge{background:#EEF2FF; color:var(--accent);}
+.wh-table{width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums;}
+.wh-table th{font-size:12px; font-weight:600; color:var(--text-secondary); text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); letter-spacing:.02em;}
+.wh-table td{padding:12px; border-bottom:1px solid var(--line); font-size:13.5px;}
+.wh-table tr:last-child td{border-bottom:none;}
+.wh-table tbody tr{transition:background .15s; cursor:pointer;}
+.wh-table tbody tr:hover{background:var(--bg-hover);}
+.wh-table .mono{font-variant-numeric:tabular-nums; font-weight:600;}
+.wh-table .num{text-align:right;}
+.wh-alert{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:#FFF7E6; border:1px solid #F2E2BE; border-radius:14px; padding:14px 16px; margin-bottom:16px;}
+.wh-alert .wa-txt{font-size:13px; color:#7A4A10; display:flex; gap:8px; align-items:center;}
+.drawer{position:fixed; top:0; right:0; width:440px; max-width:94vw; height:100%; background:#fff; z-index:72; transform:translateX(105%); transition:transform .28s cubic-bezier(.4,0,.2,1); padding:26px 26px 40px; overflow-y:auto; box-shadow:-24px 0 60px rgba(16,24,40,.18);}
+.drawer.show{transform:translateX(0);}
+.drawer-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;}
+.drawer-head h3{font-size:18px; letter-spacing:-.02em;}
+.drawer .x{cursor:pointer; border:none; background:var(--bg-hover); width:32px; height:32px; border-radius:10px; font-size:14px; color:var(--text-secondary);}
+.drawer .d-sub{font-size:12.5px; color:var(--text-tertiary); margin-bottom:18px;}
+.d-kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px;}
+.d-kpi{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:var(--bg-page);}
+.d-kpi .dk-label{font-size:11.5px; color:var(--text-secondary);}
+.d-kpi .dk-num{font-size:19px; font-weight:700; margin-top:3px; font-variant-numeric:tabular-nums;}
+.d-row{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+.d-row:last-child{border-bottom:none;}
+.d-row .dk{color:var(--text-secondary);}
+.d-advice{margin-top:16px; border-radius:14px; padding:14px 16px; background:linear-gradient(150deg,#F4F7FF,#FFFFFF); border:1px solid #E3EAFD;}
+.d-advice .da-title{font-size:12px; font-weight:700; color:var(--accent); margin-bottom:6px;}
+.d-advice .da-txt{font-size:13px; color:var(--text-primary);}
+.d-actions{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;}
+.ov2{position:fixed; inset:0; background:rgba(20,19,16,.34); z-index:71; opacity:0; pointer-events:none; transition:opacity .2s;}
+.ov2.show{opacity:1; pointer-events:auto;}
+@media (max-width:860px){
+  .wh-hero{flex-direction:column;}
+  .score-box{text-align:left;}
+  .wh-kpis{grid-template-columns:repeat(2,1fr); gap:10px;}
+}
+
 </style>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -5292,95 +5391,153 @@ input[type=range]{accent-color:#1D4ED8;}
       <div class="crumb">履约 / <b>库存看板</b></div>
       <div class="topbar-right"><span class="role">运营 / 跟单</span><div class="avatar">王</div></div>
     </header>
-    <div class="content">
+        <div class="content">
       <div class="page-head">
-        <div><h1>库存看板</h1><div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">C28 · 美国 · 数据更新至 8/19 15:00</div></div>
-        <div class="head-actions"><button class="btn ghost">导出</button><button class="btn primary" onclick="toast('已生成盘点单（按仓库+SKU）')">发起盘点</button></div>
+        <div><h1>库存看板</h1><div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">C28 · 美国 · 数据更新至 8/19 15:00 · 点击仓库卡可下钻到批次</div></div>
+        <div class="head-actions"><button class="btn ghost" onclick="toast('已导出库存总览（按仓库+批次）')">导出</button><button class="btn primary" onclick="toast('已生成盘点单（按仓库+SKU+批次）')">发起盘点</button></div>
       </div>
 
-      <!-- 摘要 -->
-      <div class="sum-bar">
-        <div class="s-card"><div class="s-label">总库存（AWD+FBA）</div><div class="s-num">4,700 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub">不含在途 2,000 台</div></div>
-        <div class="s-card"><div class="s-label"><span class="dot red"></span>呆滞 &gt;60 天</div><div class="s-num" style="color:var(--danger);">500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub">约 $90,000</div></div>
-        <div class="s-card"><div class="s-label"><span class="dot amber"></span>FBA 可售天数</div><div class="s-num" style="color:#B45309;">8 <span style="font-size:13px; color:var(--text-secondary);">天</span></div><div class="s-sub">低于安全库存 15 天</div></div>
-        <div class="s-card"><div class="s-label"><span class="dot green"></span>在途覆盖</div><div class="s-num" id="itNum">2,000 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub" id="itSub">BATCH-2608-002 · 预计 9/19 上架</div></div>
-      </div>
+      <!-- 总览视图 -->
+      <div id="whOverview">
 
-      <!-- AWD / FBA -->
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-head"><div class="card-title">AWD 卫星仓</div><span class="pill green"><span class="dot green"></span>正常</span></div>
+        <!-- 摘要 -->
+        <div class="sum-bar">
+          <div class="s-card"><div class="s-label">总库存（AWD+FBA）</div><div class="s-num">4,700 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub">不含在途 2,000 台</div></div>
+          <div class="s-card"><div class="s-label"><span class="dot red"></span>呆滞 &gt;60 天</div><div class="s-num" style="color:var(--danger);">500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub">约 $90,000 · 全在 AWD</div></div>
+          <div class="s-card"><div class="s-label"><span class="dot amber"></span>FBA 可售天数</div><div class="s-num" style="color:#B45309;">8 <span style="font-size:13px; color:var(--text-secondary);">天</span></div><div class="s-sub">低于安全库存 15 天</div></div>
+          <div class="s-card"><div class="s-label"><span class="dot green"></span>在途覆盖</div><div class="s-num" id="itNum">2,000 <span style="font-size:13px; color:var(--text-secondary);">台</span></div><div class="s-sub" id="itSub">BATCH-2608-002 · 预计 9/19 上架</div></div>
+        </div>
+
+        <!-- 仓库卡（可下钻） -->
+        <div class="grid-2">
+          <div class="card wh-card" onclick="renderWh('awd')" title="下钻 AWD 卫星仓">
+            <div class="card-head">
+              <div class="card-title">AWD 卫星仓</div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span class="score-badge good">健康 <span>92</span> 分</span>
+                <span class="pill green"><span class="dot green"></span>正常</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="inv-num">3,200 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
+              <div class="inv-sub">库存成本约 $576,000 · 自动调拨 FBA（1-2 天上架）· 周转 48 天</div>
+              <div class="age-row">
+                <div class="age-seg"><div class="age-bar bar-normal" style="height:64px;"><div class="v">1,800</div></div><div class="l">0-30 天</div></div>
+                <div class="age-seg"><div class="age-bar bar-normal" style="height:38px;"><div class="v">900</div></div><div class="l">30-60 天</div></div>
+                <div class="age-seg"><div class="age-bar bar-warn" style="height:22px;"><div class="v">400</div></div><div class="l">60-90 天</div></div>
+                <div class="age-seg"><div class="age-bar bar-bad" style="height:10px;"><div class="v">100</div></div><div class="l">90+ 天</div></div>
+              </div>
+              <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
+                <span class="pill red"><span class="dot red"></span>呆滞 500 台</span>
+                <span class="save-chip">本月长期仓储节省约 $320（vs FBA）</span>
+              </div>
+              <div class="inv-sub" style="margin-top:10px;" id="awdTransit">调拨中：BATCH-2608-002 · 2,000 台 · 预计 9/19 上架</div>
+              <div class="drill-link">下钻仓库明细 →</div>
+            </div>
+          </div>
+
+          <div class="card wh-card" onclick="renderWh('fba')" title="下钻 FBA 配送仓">
+            <div class="card-head">
+              <div class="card-title">FBA 配送仓</div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span class="score-badge warn">关注 <span>68</span> 分</span>
+                <span class="pill amber"><span class="dot amber"></span>需关注</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="inv-num">1,500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
+              <div class="inv-sub">可售 1,200 · 预留 300 · 日均销量 150 台 · 周转 12 天</div>
+              <div class="age-row">
+                <div class="age-seg"><div class="age-bar bar-normal" style="height:54px;"><div class="v">900</div></div><div class="l">0-30 天</div></div>
+                <div class="age-seg"><div class="age-bar bar-normal" style="height:24px;"><div class="v">300</div></div><div class="l">30-60 天</div></div>
+                <div class="age-seg"><div class="age-bar" style="height:0px;"></div><div class="l">60-90 天</div></div>
+                <div class="age-seg"><div class="age-bar" style="height:0px;"></div><div class="l">90+ 天</div></div>
+              </div>
+              <div class="warn-chip">⚠ 可售 8 天 &lt; 安全库存 15 天</div>
+              <div style="margin-top:12px; background:var(--bg-subtle); border:1px solid var(--line); border-radius:12px; padding:12px 14px;">
+                <div style="font-size:13px; font-weight:600;">补货建议（在途联动）</div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px;" id="replLine">在途 2,000 台（BATCH-2608-002）预计 9/19 上架，届时可售回升至约 21 天 → <b style="color:var(--text-primary);">无需立即下单</b></div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px;">若日均销量 &gt;190 台需加急评估</div>
+                <div style="margin-top:10px;"><a class="mini" href="P2-选型需求-原型.html">评估补货 →</a></div>
+              </div>
+              <div class="drill-link">下钻仓库明细 →</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 呆滞预警 -->
+        <div class="card" style="margin-bottom:18px;">
+          <div class="card-head"><div class="card-title">呆滞预警（&gt;60 天，阈值可配置）</div><span class="pill red"><span class="dot red"></span>500 台 · 约 $90,000</span></div>
           <div class="card-body">
-            <div class="inv-num">3,200 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
-            <div class="inv-sub">库存成本约 $576,000 · 自动调拨 FBA（1-2 天上架）</div>
-            <div class="age-row">
-              <div class="age-seg"><div class="age-bar bar-normal" style="height:64px;"><div class="v">1,800</div></div><div class="l">0-30 天</div></div>
-              <div class="age-seg"><div class="age-bar bar-normal" style="height:38px;"><div class="v">900</div></div><div class="l">30-60 天</div></div>
-              <div class="age-seg"><div class="age-bar bar-warn" style="height:22px;"><div class="v">400</div></div><div class="l">60-90 天</div></div>
-              <div class="age-seg"><div class="age-bar bar-bad" style="height:10px;"><div class="v">100</div></div><div class="l">90+ 天</div></div>
+            <div class="k-row"><span class="k-label">SKU / 仓库</span><span class="k-val">C28 · AWD 卫星仓</span></div>
+            <div class="k-row"><span class="k-label">批次构成</span><span class="k-val">C28-B20260528（83 天）400 台 · C28-B20260501（110 天）100 台</span></div>
+            <div class="k-row"><span class="k-label">占用成本</span><span class="k-val big-k">$90,000</span></div>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+              <button class="mini" onclick="toast('已生成促销建议（联动运营）')">促销</button>
+              <button class="mini" onclick="toast('已发起移仓申请（AWD→FBA）')">移仓</button>
+              <button class="mini danger-soft" onclick="toast('报废需填写原因并留痕')">报废</button>
             </div>
-            <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
-              <span class="pill red"><span class="dot red"></span>呆滞 500 台</span>
-              <span class="save-chip">本月长期仓储节省约 $320（vs FBA）</span>
-            </div>
-            <div class="inv-sub" style="margin-top:10px;">调拨中：BATCH-2608-002 · 2,000 台 · 预计 9/19 上架</div>
           </div>
         </div>
 
+        <!-- 盘点 -->
         <div class="card">
-          <div class="card-head"><div class="card-title">FBA 配送仓</div><span class="pill amber"><span class="dot amber"></span>需关注</span></div>
+          <div class="card-head"><div class="card-title">盘点（待复核）</div><span class="pill amber"><span class="dot amber"></span>2 单</span></div>
           <div class="card-body">
-            <div class="inv-num">1,500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
-            <div class="inv-sub">可售 1,200 · 预留 300 · 日均销量 150 台</div>
-            <div class="age-row">
-              <div class="age-seg"><div class="age-bar bar-normal" style="height:54px;"><div class="v">900</div></div><div class="l">0-30 天</div></div>
-              <div class="age-seg"><div class="age-bar bar-normal" style="height:24px;"><div class="v">300</div></div><div class="l">30-60 天</div></div>
-              <div class="age-seg"><div class="age-bar" style="height:0px;"></div><div class="l">60-90 天</div></div>
-              <div class="age-seg"><div class="age-bar" style="height:0px;"></div><div class="l">90+ 天</div></div>
-            </div>
-            <div class="warn-chip">⚠ 可售 8 天 &lt; 安全库存 15 天</div>
-            <div style="margin-top:12px; background:var(--bg-subtle); border:1px solid var(--line); border-radius:12px; padding:12px 14px;">
-              <div style="font-size:13px; font-weight:600;">补货建议（在途联动）</div>
-              <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px;" id="replLine">在途 2,000 台（BATCH-2608-002）预计 9/19 上架，届时可售回升至约 21 天 → <b style="color:var(--text-primary);">无需立即下单</b></div>
-              <div style="font-size:12.5px; color:var(--text-secondary); margin-top:4px;">若日均销量 &gt;190 台需加急评估</div>
-              <div style="margin-top:10px;"><a class="mini" href="P2-选型需求-原型.html">评估补货 →</a></div>
+            <div class="k-row"><span class="k-label">盘点单</span><span class="k-val">INV-2608-01 · C28 · AWD（账面 3,200 / 实盘 3,180 · -20 台）</span></div>
+            <div class="k-row"><span class="k-label">盘点单</span><span class="k-val">INV-2608-02 · C28 · FBA（账面 1,500 / 实盘 1,498 · -2 台）</span></div>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+              <button class="mini" onclick="openCheck()">复核</button>
+              <button class="mini" onclick="toast('盘点明细已导出')">导出明细</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 呆滞预警 -->
-      <div class="card" style="margin-bottom:18px;">
-        <div class="card-head"><div class="card-title">呆滞预警（&gt;60 天，阈值可配置）</div><span class="pill red"><span class="dot red"></span>500 台 · 约 $90,000</span></div>
-        <div class="card-body">
-          <div class="k-row"><span class="k-label">SKU / 仓库</span><span class="k-val">C28 · AWD 卫星仓</span></div>
-          <div class="k-row"><span class="k-label">库龄构成</span><span class="k-val">60-90 天 400 台 · 90+ 天 100 台</span></div>
-          <div class="k-row"><span class="k-label">占用成本</span><span class="k-val big-k">$90,000</span></div>
-          <div style="display:flex; gap:8px; margin-top:12px;">
-            <button class="mini" onclick="toast('已生成促销建议（联动运营）')">促销</button>
-            <button class="mini" onclick="toast('已发起移仓申请（AWD→FBA）')">移仓</button>
-            <button class="mini danger-soft" onclick="toast('报废需填写原因并留痕')">报废</button>
+      <!-- 仓库详情视图（下钻） -->
+      <div id="whDetail" style="display:none;">
+        <div class="dr-back" onclick="backOverview()">← 返回库存总览</div>
+        <div class="wh-hero" id="whHero"></div>
+        <div class="wh-alert" id="whAlert" style="display:none;"></div>
+        <div class="wh-kpis" id="whKpis"></div>
+        <div class="tabs" id="whTabs">
+          <div class="tab active" data-t="lots" onclick="switchTab('lots')">批次明细<span class="tab-badge" id="tbLots">0</span></div>
+          <div class="tab" data-t="age" onclick="switchTab('age')">库龄分布</div>
+          <div class="tab" data-t="flow" onclick="switchTab('flow')">出入库流水<span class="tab-badge" id="tbFlow">0</span></div>
+          <div class="tab" data-t="check" onclick="switchTab('check')">盘点记录<span class="tab-badge" id="tbCheck">0</span></div>
+        </div>
+        <div class="card" style="margin-bottom:18px;">
+          <div class="card-body">
+            <div id="tab-lots" class="tab-pane"></div>
+            <div id="tab-age" class="tab-pane" style="display:none;"></div>
+            <div id="tab-flow" class="tab-pane" style="display:none;"></div>
+            <div id="tab-check" class="tab-pane" style="display:none;"></div>
           </div>
         </div>
       </div>
 
-      <!-- 盘点 -->
-      <div class="card">
-        <div class="card-head"><div class="card-title">盘点（简版）</div><span class="pill amber"><span class="dot amber"></span>待复核</span></div>
-        <div class="card-body">
-          <div class="k-row"><span class="k-label">盘点单</span><span class="k-val">INV-2608-01 · C28 · AWD</span></div>
-          <div class="k-row"><span class="k-label">账面 / 实盘</span><span class="k-val">3,200 / 3,180</span></div>
-          <div class="k-row"><span class="k-label">差异</span><span class="k-val" style="color:var(--danger);">-20 台（盘亏）</span></div>
-          <div style="display:flex; gap:8px; margin-top:12px;">
-            <button class="mini" onclick="openCheck()">复核</button>
-            <button class="mini" onclick="toast('盘点明细已导出')">导出明细</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="foot">演示数据 · 库存同步以实际为准 · 链运 SCM v0.2</div>
+      <div class="foot">演示数据 · 库存同步以实际为准 · 链运 SCM v0.3</div>
     </div>
   </div>
+</div>
+
+
+
+<!-- 批次详情抽屉 -->
+<div class="ov2" id="lotOverlay"></div>
+<div class="drawer" id="lotDrawer">
+  <div class="drawer-head"><h3 id="lotNo">批次详情</h3><button class="x" onclick="closeLot()">✕</button></div>
+  <div class="d-sub" id="lotWh">—</div>
+  <div class="d-kpis">
+    <div class="d-kpi"><div class="dk-label">数量</div><div class="dk-num" id="lotQty">—</div></div>
+    <div class="d-kpi"><div class="dk-label">库龄</div><div class="dk-num" id="lotAge">—</div></div>
+    <div class="d-kpi"><div class="dk-label">库存成本</div><div class="dk-num" id="lotCost">—</div></div>
+  </div>
+  <div class="d-row"><span class="dk">入库日期</span><b id="lotIn">—</b></div>
+  <div class="d-row"><span class="dk">SKU</span><b>C28 扫地机器人</b></div>
+  <div class="d-row"><span class="dk">状态</span><span id="lotStatus">—</span></div>
+  <div class="d-advice"><div class="da-title">AI 处置建议</div><div class="da-txt" id="lotAdvice">—</div></div>
+  <div class="d-actions" id="lotActions"></div>
 </div>
 
 <!-- 盘点复核弹窗 -->
@@ -5398,8 +5555,7 @@ input[type=range]{accent-color:#1D4ED8;}
 
 <div class="toast" id="toast"></div>
 
-<script>
-function openCheck(){ document.getElementById('checkModal').classList.add('show'); }
+<script>function openCheck(){ document.getElementById('checkModal').classList.add('show'); }
 function closeCheck(){ document.getElementById('checkModal').classList.remove('show'); }
 function confirmCheck(){
   const r=document.getElementById('diffReason').value;
@@ -5409,8 +5565,179 @@ function confirmCheck(){
 }
 document.getElementById('checkModal').addEventListener('click',e=>{ if(e.target.id==='checkModal') closeCheck(); });
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
+
+/* ===== P8 库存下钻 ===== */
+var WAREHOUSES={
+  awd:{
+    id:'awd', name:'AWD 卫星仓', type:'Amazon AWD 卫星仓（FBA 上游）', code:'US-AWD-01', addr:'美西 · ONT8 辐射区',
+    score:92, status:'正常', statusCls:'green', qty:3200, turnover:48, cap:62, capTxt:'62%',
+    alert:'呆滞 500 台（60-90 天 400 台 · 90+ 天 100 台），占用成本约 $90,000',
+    lots:[
+      {no:'C28-B20260812', in:'2026-08-12', qty:700,  age:7,   seg:'0-30',  status:'健康',   cls:'green'},
+      {no:'C28-B20260802', in:'2026-08-02', qty:1100, age:17,  seg:'0-30',  status:'健康',   cls:'green'},
+      {no:'C28-B20260620', in:'2026-06-20', qty:900,  age:60,  seg:'30-60', status:'正常',   cls:'green'},
+      {no:'C28-B20260528', in:'2026-05-28', qty:400,  age:83,  seg:'60-90', status:'呆滞风险', cls:'amber'},
+      {no:'C28-B20260501', in:'2026-05-01', qty:100,  age:110, seg:'90+',   status:'呆滞',   cls:'red'}
+    ],
+    flow:[
+      {d:'08/18', t:'盘亏',   no:'INV-2608-01', q:'-20',  rel:'盘点复核（待）'},
+      {d:'08/15', t:'调拨出库', no:'TB-2608-003', q:'-800', rel:'FBA 配送仓'},
+      {d:'08/12', t:'入库',   no:'BATCH-2608-001', q:'+700', rel:'货代A · CN-US'},
+      {d:'08/05', t:'入库',   no:'BATCH-2607-006', q:'+1100', rel:'货代B · VN-US'},
+      {d:'08/01', t:'调拨出库', no:'TB-2608-001', q:'-900', rel:'FBA 配送仓'}
+    ],
+    checks:[
+      {no:'INV-2608-01', d:'08/18', book:3200, act:3180, diff:'-20', st:'待复核', cls:'amber'},
+      {no:'INV-2607-03', d:'07/19', book:3400, act:3400, diff:'0',   st:'已复核', cls:'green'}
+    ]
+  },
+  fba:{
+    id:'fba', name:'FBA 配送仓', type:'FBA 运营仓（自配送）', code:'US-FBA-01', addr:'美西 · 与 AWD 同区',
+    score:68, status:'需关注', statusCls:'amber', qty:1500, turnover:12, cap:85, capTxt:'85%',
+    alert:'可售仅 8 天 &lt; 安全库存 15 天；在途 2,000 台预计 9/19 上架可覆盖',
+    lots:[
+      {no:'C28-B20260810', in:'2026-08-10', qty:900, age:9,  seg:'0-30',  status:'健康', cls:'green'},
+      {no:'C28-B20260701', in:'2026-07-01', qty:300, age:49, seg:'30-60', status:'正常', cls:'green'}
+    ],
+    flow:[
+      {d:'08/19', t:'销售出库', no:'ORD-2608-1182', q:'-150', rel:'自配送'},
+      {d:'08/18', t:'销售出库', no:'ORD-2608-1176', q:'-162', rel:'自配送'},
+      {d:'08/15', t:'调拨入库', no:'TB-2608-003', q:'+800', rel:'AWD 卫星仓'},
+      {d:'08/12', t:'销售出库', no:'ORD-2608-1151', q:'-141', rel:'自配送'},
+      {d:'08/10', t:'入库', no:'BATCH-2607-005', q:'+900', rel:'货代B · VN-US'}
+    ],
+    checks:[
+      {no:'INV-2608-02', d:'08/19', book:1500, act:1498, diff:'-2', st:'待复核', cls:'amber'}
+    ]
+  }
+};
+var currentWh=null;
+
+function segSums(w){
+  var m={'0-30':0,'30-60':0,'60-90':0,'90+':0};
+  for(var i=0;i<w.lots.length;i++) m[w.lots[i].seg]+=w.lots[i].qty;
+  return m;
+}
+function renderWh(id){
+  var w=WAREHOUSES[id]; if(!w) return;
+  currentWh=id;
+  var seg=segSums(w);
+  var scoreColor = w.score>=85 ? 'var(--success)' : 'var(--warning)';
+  document.getElementById('whHero').innerHTML =
+    '<div><h2>'+w.name+'</h2><div class="wh-sub">'+w.type+' · 仓库编码 '+w.code+'</div>'
+    +'<div class="wh-meta"><span>📍 '+w.addr+'</span><span>库存 '+(w.qty).toLocaleString()+' 台</span></div>'
+    +'<div class="cap-row"><div class="cap-label"><span>库容占用</span><b>'+w.capTxt+'</b></div><div class="cap-track"><div class="cap-fill'+(w.cap>80?' warn':'')+'" style="width:'+w.cap+'%;"></div></div></div></div>'
+    +'<div class="score-box"><div class="score-big" style="color:'+scoreColor+';">'+w.score+'</div><div class="score-tag">库存健康得分 / 100</div><span class="pill '+w.statusCls+'" style="margin-top:8px; display:inline-flex;"><span class="dot '+w.statusCls+'"></span>'+w.status+'</span></div>';
+  var al=document.getElementById('whAlert');
+  if(w.alert){
+    al.style.display='flex';
+    al.innerHTML='<div class="wa-txt"><b>⚠</b><span>'+w.alert+'</span></div>'
+      +(w.id==='awd'
+        ? '<div style="display:flex; gap:8px; flex-wrap:wrap;"><button class="mini" onclick="toast(\'已生成促销建议（联动运营）\')">促销</button><button class="mini" onclick="toast(\'已发起移仓申请（AWD→FBA）\')">移仓</button><button class="mini danger-soft" onclick="toast(\'报废需填写原因并留痕\')">报废</button></div>'
+        : '<div style="display:flex; gap:8px;"><button class="mini" onclick="toast(\'已触发补货评估（在途联动）\')">评估补货</button></div>');
+  } else al.style.display='none';
+  var kpis;
+  if(w.id==='awd'){
+    kpis=[
+      {l:'总库存', v:w.qty.toLocaleString()+' 台'},
+      {l:'呆滞占比', v:'15.6%'},
+      {l:'周转天数', v:w.turnover+' 天'},
+      {l:'长期仓储费', v:'$320 / 月（较FBA省）'}
+    ];
+  } else {
+    kpis=[
+      {l:'总库存', v:w.qty.toLocaleString()+' 台'},
+      {l:'可售天数', v:'8 天'},
+      {l:'周转天数', v:w.turnover+' 天'},
+      {l:'日均销量', v:'150 台'}
+    ];
+  }
+  document.getElementById('whKpis').innerHTML = kpis.map(function(k){
+    return '<div class="s-card"><div class="s-label">'+k.l+'</div><div class="s-num" style="font-size:22px;">'+k.v+'</div></div>';
+  }).join('');
+  var rows=w.lots.map(function(l){
+    return '<tr onclick="showLot(\''+w.id+'\',\''+l.no+'\')">'
+      +'<td class="mono">'+l.no+'</td><td>'+l.in+'</td>'
+      +'<td class="num">'+l.qty.toLocaleString()+' 台</td>'
+      +'<td class="num">'+l.age+' 天</td>'
+      +'<td><span class="pill '+l.cls+'"><span class="dot '+l.cls+'"></span>'+l.status+'</span></td>'
+      +'<td style="text-align:right;"><span class="link">批次详情 →</span></td></tr>';
+  }).join('');
+  document.getElementById('tab-lots').innerHTML =
+    '<table class="wh-table"><thead><tr><th>批次号</th><th>入库日期</th><th class="num">数量</th><th class="num">库龄</th><th>状态</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>';
+  document.getElementById('tbLots').textContent=w.lots.length;
+  var bars=[
+    {l:'0-30 天', v:seg['0-30'], h:Math.max(16, Math.round(seg['0-30']/w.qty*100)), c:'bar-normal'},
+    {l:'30-60 天', v:seg['30-60'], h:Math.max(10, Math.round(seg['30-60']/w.qty*100)), c:'bar-normal'},
+    {l:'60-90 天', v:seg['60-90'], h:Math.max(8, Math.round(seg['60-90']/w.qty*100)), c:'bar-warn'},
+    {l:'90+ 天', v:seg['90+'], h:Math.max(6, Math.round(seg['90+']/w.qty*100)), c:'bar-bad'}
+  ];
+  document.getElementById('tab-age').innerHTML =
+    '<div class="age-row">'+bars.map(function(b){
+      return '<div class="age-seg"><div class="age-bar '+b.c+'" style="height:'+b.h+'px;"><div class="v">'+(b.v||'0')+'</div></div><div class="l">'+b.l+'</div></div>';
+    }).join('')+'</div>'
+    +'<div style="font-size:12.5px; color:var(--text-secondary); margin-top:16px;">'+w.name+' 库存 '+(w.qty).toLocaleString()+' 台 · 呆滞阈值 &gt;60 天（可配置）· 库龄按入库批次加权计算</div>';
+  var flow=w.flow.map(function(f){
+    var neg=f.q.charAt(0)==='-';
+    return '<tr><td class="mono">'+f.d+'</td><td>'+f.t+'</td><td class="mono">'+f.no+'</td><td class="num" style="color:'+(neg?'var(--danger)':'var(--success)')+';">'+f.q+' 台</td><td>'+f.rel+'</td></tr>';
+  }).join('');
+  document.getElementById('tab-flow').innerHTML='<table class="wh-table"><thead><tr><th>日期</th><th>类型</th><th>单号</th><th class="num">数量</th><th>关联</th></tr></thead><tbody>'+flow+'</tbody></table>';
+  document.getElementById('tbFlow').textContent=w.flow.length;
+  var checks=w.checks.map(function(c){
+    var neg=c.diff.charAt(0)==='-';
+    return '<tr><td class="mono">'+c.no+'</td><td>'+c.d+'</td><td class="num">'+c.book.toLocaleString()+'</td><td class="num">'+c.act.toLocaleString()+'</td><td class="num" style="color:'+(neg?'var(--danger)':'var(--success)')+';">'+c.diff+'</td><td><span class="pill '+c.cls+'"><span class="dot '+c.cls+'"></span>'+c.st+'</span></td></tr>';
+  }).join('');
+  document.getElementById('tab-check').innerHTML='<table class="wh-table"><thead><tr><th>盘点单</th><th>日期</th><th class="num">账面</th><th class="num">实盘</th><th class="num">差异</th><th>状态</th></tr></thead><tbody>'+checks+'</tbody></table>';
+  document.getElementById('tbCheck').textContent=w.checks.length;
+  switchTab('lots');
+  document.getElementById('whOverview').style.display='none';
+  document.getElementById('whDetail').style.display='block';
+  try{ window.scrollTo(0,0); }catch(e){}
+}
+function backOverview(){
+  document.getElementById('whOverview').style.display='';
+  document.getElementById('whDetail').style.display='none';
+  try{ window.scrollTo(0,0); }catch(e){}
+}
+function switchTab(t){
+  var tabs=document.querySelectorAll('#whTabs .tab');
+  for(var i=0;i<tabs.length;i++) tabs[i].classList.toggle('active', tabs[i].getAttribute('data-t')===t);
+  var keys=['lots','age','flow','check'];
+  for(var j=0;j<keys.length;j++){ document.getElementById('tab-'+keys[j]).style.display=(keys[j]===t?'':'none'); }
+}
+function showLot(whId,no){
+  var w=WAREHOUSES[whId]; var l=null;
+  for(var i=0;i<w.lots.length;i++){ if(w.lots[i].no===no){ l=w.lots[i]; break; } }
+  if(!l) return;
+  var cost=l.qty*180;
+  var stale=l.age>=60;
+  document.getElementById('lotNo').textContent=no;
+  document.getElementById('lotWh').textContent=w.name+' · '+w.code+' · SKU C28';
+  document.getElementById('lotIn').textContent=l.in;
+  document.getElementById('lotQty').textContent=l.qty.toLocaleString()+' 台';
+  document.getElementById('lotAge').textContent=l.age+' 天';
+  document.getElementById('lotCost').textContent='$'+cost.toLocaleString()+'（单价 $180）';
+  document.getElementById('lotStatus').innerHTML='<span class="pill '+l.cls+'"><span class="dot '+l.cls+'"></span>'+l.status+'</span>';
+  document.getElementById('lotAdvice').textContent = stale
+    ? '库龄已超 60 天，处于呆滞区间。建议优先「移仓 AWD→FBA」或联动运营做促销/清仓评估；若库龄超过 90 天，评估报废并留痕。'
+    : '库龄健康，处于正常周转区间，无需干预；建议按 FBA 可售天数（8 天）与在途覆盖（2,000 台）滚动评估补货节奏。';
+  document.getElementById('lotActions').innerHTML = stale
+    ? '<button class="mini" onclick="toast(\'已发起该批次移仓申请\')">移仓</button><button class="mini" onclick="toast(\'已生成促销建议\')">促销</button><button class="mini danger-soft" onclick="toast(\'报废需填写原因并留痕\')">报废</button>'
+    : '<button class="mini" onclick="toast(\'已加入下次盘点计划\')">加入盘点计划</button><button class="mini" onclick="toast(\'已生成批次标签\')">批次标签</button>';
+  document.getElementById('lotOverlay').classList.add('show');
+  document.getElementById('lotDrawer').classList.add('show');
+}
+function closeLot(){
+  document.getElementById('lotOverlay').classList.remove('show');
+  document.getElementById('lotDrawer').classList.remove('show');
+}
+document.getElementById('lotOverlay').addEventListener('click',closeLot);
 (function(){
   try{
+    var dl=null;
+    try{ if(window.parent&&window.parent._drillTarget) dl=window.parent._drillTarget; }catch(e){}
+    if(!dl){ var hh=(location.hash||'').replace('#','').split('?')[0]; if(hh==='awd'||hh==='fba') dl=hh; }
+    if(dl==='awd'||dl==='fba'){ try{ window.parent._drillTarget=null; }catch(e){} renderWh(dl); }
     const b=JSON.parse(localStorage.getItem('lianyun_batch')||'null');
     if(b&&b.id){
       const qty=(b.cargo.match(/×[\s]?([0-9,]+)/)||[])[1];
@@ -6013,7 +6340,8 @@ function setPage(id) {
 function go(id) {
   var p = null;
   for (var i = 0; i < PAGES.length; i++) if (PAGES[i].id === id) { p = PAGES[i]; break; }
-  if (!p || id === current) return;
+  if (!p) return;
+  if (id === current && !window._drillTarget) return;
   current = id;
   var items = document.querySelectorAll(".nav-item");
   for (var j = 0; j < items.length; j++) items[j].classList.toggle("active", items[j].getAttribute("data-id") === id);
@@ -6031,8 +6359,16 @@ window.addEventListener("hashchange", function() {
 
 /* 供内嵌页面调用：内部跳转统一由外壳接管 */
 window.shellGo = function(href) {
-  var base = href.split("?")[0].split("/").pop();
-  for (var i = 0; i < PAGES.length; i++) if (PAGES[i].file === base) { go(PAGES[i].id); return; }
+  var full = href.split("/").pop();
+  var base = full.split("?")[0].split("#")[0];
+  var h = "";
+  var hi = full.indexOf("#");
+  if (hi > -1) h = full.slice(hi + 1).split("?")[0];
+  for (var i = 0; i < PAGES.length; i++) if (PAGES[i].file === base) {
+    if (h) window._drillTarget = h;
+    go(PAGES[i].id);
+    return;
+  }
 };
 
 function toggleNav() {

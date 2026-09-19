@@ -154,6 +154,9 @@
   .inv .i-num{font-size:22px; font-weight:700; margin-top:6px; font-variant-numeric:tabular-nums;}
   .inv .i-sub{font-size:12px; color:var(--text-secondary); margin-top:2px;}
   .inv .i-warn{font-size:12px; color:#B45309; margin-top:6px; background:#FFFBEB; display:inline-block; padding:3px 8px; border-radius:6px;}
+  a.inv{display:block; text-decoration:none; color:inherit; cursor:pointer; transition:border-color .15s, box-shadow .15s, transform .15s;}
+  a.inv:hover{border-color:#B9C4F0; box-shadow:0 6px 18px rgba(29,78,216,.08); transform:translateY(-1px);}
+  .glass{cursor:pointer;}
 
   /* 快捷入口 */
   .quick{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
@@ -564,22 +567,22 @@ input[type=range]{accent-color:#1D4ED8;}
           <span class="tag">👋 一切在控 · 1 项需处理</span>
         </div>
         <div class="glass-row">
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-001'):location.href='P7-运输监控-原型.html#BATCH-2608-001'" title="点击跳转">
             <div class="g-label"><span class="dot red"></span>逾期风险</div>
             <div class="g-num">1</div>
             <div class="g-sub">BATCH-2608-001 · +2 天</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P7-运输监控-原型.html#BATCH-2608-003'):location.href='P7-运输监控-原型.html#BATCH-2608-003'" title="点击跳转">
             <div class="g-label"><span class="dot amber"></span>待打分</div>
             <div class="g-num">1</div>
             <div class="g-sub">BATCH-2608-003 · 已签收</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html#awd'):location.href='P8-库存看板-原型.html#awd'" title="点击跳转">
             <div class="g-label"><span class="dot red"></span>呆滞库存</div>
             <div class="g-num">500 <span style="font-size:14px; opacity:.8;">台</span></div>
             <div class="g-sub">约 $90,000 · 库龄 &gt;60 天</div>
           </div>
-          <div class="glass">
+          <div class="glass" onclick="(window.parent&&window.parent.shellGo)?window.parent.shellGo('P8-库存看板-原型.html#fba'):location.href='P8-库存看板-原型.html#fba'" title="点击跳转">
             <div class="g-label"><span class="dot amber"></span>FBA 可售天数</div>
             <div class="g-num">8 <span style="font-size:14px; opacity:.8;">天</span></div>
             <div class="g-sub">低于安全库存 15 天</div>
@@ -590,25 +593,25 @@ input[type=range]{accent-color:#1D4ED8;}
       <!-- 待办 + 在途批次 -->
       <div class="grid">
         <div class="card">
-          <div class="card-head"><div class="card-title">我的待办</div><div class="card-link">全部待办 →</div></div>
+          <div class="card-head"><div class="card-title">我的待办</div><div class="card-link" onclick="location.href='P7-运输监控-原型.html'" title="查看全部批次与风险">全部待办 →</div></div>
           <div class="card-body">
             <ul class="todo">
-              <li>
+              <li onclick="location.href='P4-比价看板-原型.html'" title="点击跳转">
                 <div class="t-ico blue">选</div>
                 <div class="t-txt"><div class="t-title">选型任务进行中</div><div class="t-sub">#REQ-2608-001 · C28 × 2000 台 · 待比价</div></div>
                 <span class="t-go">2 项 →</span>
               </li>
-              <li>
+              <li onclick="location.href='P6-SO草稿-原型.html'" title="点击跳转">
                 <div class="t-ico amber">审</div>
                 <div class="t-txt"><div class="t-title">订舱委托待审批</div><div class="t-sub">SO-2608-001 · 货代A · $10,130</div></div>
                 <span class="t-go">1 项 →</span>
               </li>
-              <li>
+              <li onclick="location.href='P7-运输监控-原型.html#BATCH-2608-003'" title="点击跳转">
                 <div class="t-ico green">评</div>
                 <div class="t-txt"><div class="t-title">履约待打分</div><div class="t-sub">BATCH-2608-003 · 货代C · 已签收</div></div>
                 <span class="t-go">1 项 →</span>
               </li>
-              <li>
+              <li onclick="location.href='P8-库存看板-原型.html'" title="点击跳转">
                 <div class="t-ico red">盘</div>
                 <div class="t-txt"><div class="t-title">盘点待复核</div><div class="t-sub">INV-2608-01 · 差异 -20 台（盘亏）</div></div>
                 <span class="t-go">1 项 →</span>
@@ -618,7 +621,7 @@ input[type=range]{accent-color:#1D4ED8;}
         </div>
 
         <div class="card">
-          <div class="card-head"><div class="card-title">在途批次</div><div class="card-link">运输监控 →</div></div>
+          <div class="card-head"><div class="card-title">在途批次</div><div class="card-link" onclick="location.href='P7-运输监控-原型.html'">运输监控 →</div></div>
           <div class="card-body" style="padding-top:12px;">
             <table>
               <thead>
@@ -632,7 +635,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td>在途（8/15 开船）</td>
                   <td class="num"><span style="color:#B91C1C;">9/12 vs 9/10</span></td>
                   <td><span class="pill red"><span class="dot red"></span>逾期风险</span></td>
-                  <td><span class="link">详情</span></td>
+                  <td><span class="link" onclick="location.href='P7-运输监控-原型.html#BATCH-2608-001'" style="cursor:pointer;">详情</span></td>
                 </tr>
                 <tr>
                   <td class="mono">BATCH-2608-002</td>
@@ -641,7 +644,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td id="r2status">订舱 · 截关 8/22</td>
                   <td class="num" id="r2eta">9/14 vs 9/14</td>
                   <td><span class="pill green"><span class="dot green"></span>正常</span></td>
-                  <td><span class="link">详情</span></td>
+                  <td><span class="link" onclick="location.href='P7-运输监控-原型.html#BATCH-2608-002'" style="cursor:pointer;">详情</span></td>
                 </tr>
                 <tr>
                   <td class="mono">BATCH-2608-003</td>
@@ -650,7 +653,7 @@ input[type=range]{accent-color:#1D4ED8;}
                   <td>已签收（8/12）</td>
                   <td class="num">已到港</td>
                   <td><span class="pill amber"><span class="dot amber"></span>待打分</span></td>
-                  <td><span class="link">评分</span></td>
+                  <td><span class="link" onclick="location.href='P7-运输监控-原型.html#BATCH-2608-003'" style="cursor:pointer;">评分</span></td>
                 </tr>
               </tbody>
             </table>
@@ -661,24 +664,24 @@ input[type=range]{accent-color:#1D4ED8;}
       <!-- 库存 + 快捷入口 -->
       <div class="grid-2">
         <div class="card">
-          <div class="card-head"><div class="card-title">库存摘要</div><div class="card-link">库存看板 →</div></div>
+          <div class="card-head"><div class="card-title">库存摘要</div><div class="card-link" onclick="location.href='P8-库存看板-原型.html'">库存看板 →</div></div>
           <div class="card-body">
             <div class="inv-blocks">
-              <div class="inv">
+              <a class="inv" href="P8-库存看板-原型.html#awd" title="下钻 AWD 卫星仓">
                 <div class="i-name">AWD 卫星仓 <span class="pill green"><span class="dot green"></span>正常</span></div>
                 <div class="i-num">3,200 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
                 <div class="i-sub" id="p1Transit">调拨中：2,000 台预计 9/19 上架</div>
-              </div>
-              <div class="inv">
+              </a>
+              <a class="inv" href="P8-库存看板-原型.html#fba" title="下钻 FBA 配送仓">
                 <div class="i-name">FBA 配送仓 <span class="pill amber"><span class="dot amber"></span>需关注</span></div>
                 <div class="i-num">1,500 <span style="font-size:13px; color:var(--text-secondary);">台</span></div>
                 <div class="i-sub">可售 1,200 · 预留 300</div>
                 <div class="i-warn">⚠ 可售 8 天 &lt; 安全 15 天（在途可覆盖）</div>
-              </div>
+              </a>
             </div>
             <div style="margin-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
               <span class="pill red"><span class="dot red"></span>呆滞 500 台 · $90,000</span>
-              <span class="link">处理呆滞 →</span>
+              <span class="link" onclick="location.href='P8-库存看板-原型.html#awd'" style="cursor:pointer;">处理呆滞 →</span>
             </div>
           </div>
         </div>
@@ -687,12 +690,12 @@ input[type=range]{accent-color:#1D4ED8;}
           <div class="card-head"><div class="card-title">快捷入口</div></div>
           <div class="card-body">
             <div class="quick">
-              <div class="q-btn"><div class="q-ico">选</div>发起选型</div>
-              <div class="q-btn"><div class="q-ico">报</div>导入报价</div>
+              <a class="q-btn" href="P2-选型需求-原型.html"><div class="q-ico">选</div>发起选型</a>
+              <a class="q-btn" href="P3-货代报价-原型.html"><div class="q-ico">报</div>导入报价</a>
               <a class="q-btn" href="P7-运输监控-原型.html"><div class="q-ico">运</div>运输监控</a>
-              <div class="q-btn"><div class="q-ico">存</div>库存看板</div>
+              <a class="q-btn" href="P8-库存看板-原型.html"><div class="q-ico">存</div>库存看板</a>
               <a class="q-btn" href="P4-比价看板-原型.html"><div class="q-ico">比</div>比价看板</a>
-              <div class="q-btn"><div class="q-ico">档</div>货代档案</div>
+              <a class="q-btn" href="P9-货代档案-原型.html"><div class="q-ico">档</div>货代档案</a>
             </div>
           </div>
         </div>

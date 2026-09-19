@@ -408,6 +408,10 @@ input[type=range]{accent-color:#1D4ED8;}
     .ai-verdict{flex-wrap:wrap;}
     .w-row{min-width:0;}
   }
+
+/* ===== P7 深链定位高亮 ===== */
+.batch.flash{animation:flashBg 1.8s ease;}
+@keyframes flashBg{0%{box-shadow:0 0 0 3px rgba(37,99,235,.45); background:#F0F5FF;}100%{box-shadow:var(--shadow-1); background:transparent;}}
 </style>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -586,6 +590,31 @@ document.querySelectorAll('.f-chip').forEach(c=>c.onclick=()=>{
 });
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
 render();
+/* 深链：从 P1 在途批次跳入时自动展开并定位对应批次 */
+(function(){
+  try{
+    var dl=null;
+    try{ if(window.parent&&window.parent._drillTarget) dl=window.parent._drillTarget; }catch(e){}
+    if(!dl){ var hh=(location.hash||'').replace('#','').split('?')[0]; if(hh) dl=hh; }
+    if(dl && dl.indexOf('BATCH-')===0){
+      try{ window.parent._drillTarget=null; }catch(e){}
+      filter='all';
+      var chips=document.querySelectorAll('.f-chip');
+      for(var i=0;i<chips.length;i++) chips[i].classList.toggle('active', chips[i].getAttribute('data-f')==='all');
+      render();
+      var det=document.getElementById('det-'+dl);
+      if(det){
+        if(!det.classList.contains('show')) toggleDetail(dl);
+        var card=det.parentElement;
+        card.classList.add('flash');
+        setTimeout(function(){ card.classList.remove('flash'); }, 1800);
+        try{ det.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
+        toast('已定位到 '+dl);
+      }
+    }
+  }catch(e){}
+})();
+
 </script>
 </body>
 </html>
