@@ -5,7 +5,10 @@
 
 ## 🔗 在线体验（可直接点开，永久有效）
 
-**https://lianyun-scm.netlify.app**
+| 入口 | 链接 |
+|---|---|
+| **主站（Netlify）** | https://lianyun-scm.netlify.app |
+| 备用（GitHub Pages） | https://yyw1william.github.io/lianyun-scm/ |
 
 手机扫码同样可打开（响应式适配）：
 
@@ -66,7 +69,13 @@ docs/            站点根文件（index.html，部署用）
 改完 `mockup/APP.html` 后：
 
 ```bash
+# 1) 同步到站点根文件
 cp mockup/APP.html docs/index.html
+
+# 2) 推 GitHub（Pages 会自动重新构建）
+git add -A && git commit -m "update: 原型更新" && git push
+
+# 3) 推 Netlify（可选，双站同步）
 cd /private/tmp/site_deploy && netlify deploy --prod --site c860a538-90fc-48b8-9b63-37805e4d99d7
 ```
 
